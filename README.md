@@ -23,7 +23,7 @@ This is a NodeJS module to help you process modbus data. It uses [pdu](https://g
 This is my current `test.js` file. It creates a client and a server network socket and the server requests coils as soon as the client connects.
 
 ```js
-var modbus = require("modbus-stream");
+var modbus = require("modbus-tars");
 
 modbus.tcp.server({ debug: "server" }, (connection) => {
     connection.readCoils({ address: 5, quantity: 8 }, (err, info) => {
@@ -45,7 +45,7 @@ modbus.tcp.server({ debug: "server" }, (connection) => {
 To connect to a modbus device over TCP, use:
 
 ```js
-var modbus = require("modbus-stream");
+var modbus = require("modbus-tars");
 
 modbus.tcp.connect(502, "134.2.56.231", { debug: "automaton-2454" }, (err, connection) => {
     // do something with connection
@@ -55,7 +55,7 @@ modbus.tcp.connect(502, "134.2.56.231", { debug: "automaton-2454" }, (err, conne
 To listen for connections over TCP, use:
 
 ```js
-var modbus = require("modbus-stream");
+var modbus = require("modbus-tars");
 
 modbus.tcp.server({ debug: "server" }, (connection) => {
     // do something with connection
@@ -67,7 +67,7 @@ modbus.tcp.server({ debug: "server" }, (connection) => {
 To connecto to a modbus device over a serial port, use:
 
 ```js
-var modbus = require("modbus-stream");
+var modbus = require("modbus-tars");
 
 modbus.serial.connect("/dev/ttyS123", { debug: "automaton-123" }, (err, connection) => {
     // do something with connection
