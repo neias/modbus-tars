@@ -52,6 +52,21 @@ modbus.tcp.connect(502, "134.2.56.231", { debug: "automaton-2454" }, (err, conne
 });
 ```
 
+You can get ascii data via tcp.
+
+```
+var modbus = require("modbus-tars");
+
+modbus.tcp.connect(502, "192.168.1.30", { debug: null , mode: "ascii"}, (err, connection) => {
+    if (err) throw err;
+
+    connection.readHoldingRegisters({address: 95, quantity: 1}, (err, data) => {
+        if (err) throw err;
+        console.log(data.response.data);
+  });
+});
+```
+
 To listen for connections over TCP, use:
 
 ```js
