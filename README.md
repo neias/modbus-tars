@@ -1,4 +1,4 @@
-## Modbus Stream
+## Modbus Tars (tcp/udp, ascii, rtu, serial)
 
 [![Build Status](https://secure.travis-ci.org/node-modbus/stream.png?branch=master)](http://travis-ci.org/node-modbus/stream)
 [![Package Version](https://badge.fury.io/js/modbus-stream.svg)](https://npmjs.org/package/modbus-stream)
